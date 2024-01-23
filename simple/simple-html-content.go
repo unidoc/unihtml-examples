@@ -10,7 +10,7 @@ import (
 	"os"
 
 	"github.com/unidoc/unihtml"
-	"github.com/unidoc/unioffice/common/license"
+	"github.com/unidoc/unipdf/v3/common/license"
 	"github.com/unidoc/unipdf/v3/creator"
 )
 
@@ -35,11 +35,31 @@ func main() {
 		os.Exit(1)
 	}
 
+	htmlContent := `
+		 <!DOCTYPE html>
+		 <html>
+		 <head>
+			 <style>
+				 body {
+					 background-color: #6E85F7;
+					 font-size-adjust: initial;
+				 }
+			 </style>
+		 </head>
+		 <body>
+		 
+		 <h1>Oh Hi...</h1>
+		 <p>It works!</p>
+		 
+		 </body>
+		 </html>	
+	 `
+
 	// Get new PDF Creator.
 	c := creator.New()
 
-	// Read the content of the simple.html file and load it to the conversion.
-	htmlDocument, err := unihtml.NewDocument("simple.html")
+	// Convert the HTML content to UniHTML document.
+	htmlDocument, err := unihtml.NewDocumentFromString(htmlContent)
 	if err != nil {
 		fmt.Printf("Err: NewDocument failed: %v\n", err)
 		os.Exit(1)
@@ -52,7 +72,7 @@ func main() {
 	}
 
 	// Write the result file to PDF.
-	if err = c.WriteToFile("simple.pdf"); err != nil {
+	if err = c.WriteToFile("simple-from-text.pdf"); err != nil {
 		fmt.Printf("Err: %v\n", err)
 		os.Exit(1)
 	}
