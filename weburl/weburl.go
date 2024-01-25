@@ -13,9 +13,19 @@ import (
 
 	"github.com/unidoc/unihtml"
 	"github.com/unidoc/unihtml/sizes"
+	"github.com/unidoc/unioffice/common/license"
 
 	"github.com/unidoc/unipdf/v3/creator"
 )
+
+func init() {
+	// Make sure to load your metered License API key prior to using the library.
+	// If you need a key, you can sign up and create a free one at https://cloud.unidoc.io
+	err := license.SetMeteredKey(os.Getenv(`UNIDOC_LICENSE_API_KEY`))
+	if err != nil {
+		panic(err)
+	}
+}
 
 func main() {
 	if len(os.Args) != 2 {
@@ -32,7 +42,7 @@ func main() {
 	// Get new PDF creator.
 	c := creator.New()
 
-	// Create new document based on the HTML file called resume.html.
+	// Create a new document based on the HTML page loaded from the given URL.
 	webDocument, err := unihtml.NewDocument("https://www.google.com")
 	if err != nil {
 		fmt.Printf("Err: NewDocument failed: %v\n", err)
