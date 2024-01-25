@@ -42,7 +42,7 @@ func main() {
 	// Get new PDF creator.
 	c := creator.New()
 
-	// Create new document based on the HTML apge loadded from the give URL.
+	// Create a new document based on the HTML page loaded from the given URL.
 	webDocument, err := unihtml.NewDocument("https://www.google.com")
 	if err != nil {
 		fmt.Printf("Err: NewDocument failed: %v\n", err)
