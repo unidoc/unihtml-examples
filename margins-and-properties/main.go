@@ -13,10 +13,9 @@ import (
 
 	"github.com/unidoc/unihtml"
 	"github.com/unidoc/unihtml/sizes"
-	"github.com/unidoc/unioffice/common/license"
-	"github.com/unidoc/unipdf/v3/model"
-
+	"github.com/unidoc/unipdf/v3/common/license"
 	"github.com/unidoc/unipdf/v3/creator"
+	"github.com/unidoc/unipdf/v3/model"
 )
 
 func init() {

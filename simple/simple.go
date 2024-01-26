@@ -10,7 +10,7 @@ import (
 	"os"
 
 	"github.com/unidoc/unihtml"
-	"github.com/unidoc/unioffice/common/license"
+	"github.com/unidoc/unipdf/v3/common/license"
 	"github.com/unidoc/unipdf/v3/creator"
 )
 
