@@ -13,8 +13,8 @@ import (
 
 	"github.com/unidoc/unihtml"
 	"github.com/unidoc/unihtml/sizes"
-	"github.com/unidoc/unipdf/v3/common/license"
-	"github.com/unidoc/unipdf/v3/creator"
+	"github.com/unidoc/unipdf/v4/common/license"
+	"github.com/unidoc/unipdf/v4/creator"
 )
 
 func init() {
@@ -41,7 +41,7 @@ func main() {
 	// Get new PDF creator.
 	c := creator.New()
 
-	// Create a new document based on the HTML page loaded from the given URL.
+	// Create new document based on the HTML file called resume.html.
 	webDocument, err := unihtml.NewDocument("https://www.google.com")
 	if err != nil {
 		fmt.Printf("Err: NewDocument failed: %v\n", err)
