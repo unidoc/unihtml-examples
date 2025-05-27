@@ -10,8 +10,8 @@ import (
 	"os"
 
 	"github.com/unidoc/unihtml"
-	"github.com/unidoc/unipdf/v3/common/license"
-	"github.com/unidoc/unipdf/v3/creator"
+	"github.com/unidoc/unipdf/v4/common/license"
+	"github.com/unidoc/unipdf/v4/creator"
 )
 
 func init() {
@@ -22,6 +22,7 @@ func init() {
 		panic(err)
 	}
 }
+
 func main() {
 	if len(os.Args) != 2 {
 		fmt.Println("Err: provided invalid arguments. No UniHTML server path provided")
@@ -38,8 +39,9 @@ func main() {
 	c := creator.New()
 
 	// Create paragraph before HTML content.
-	p := c.NewParagraph("Result is not calm in shangri-la, the enlightened mind, or chaos, but everywhere.")
-	if err := c.Draw(p); err != nil {
+	sp := c.NewStyledParagraph()
+	sp.SetText("Result is not calm in shangri-la, the enlightened mind, or chaos, but everywhere.")
+	if err := c.Draw(sp); err != nil {
 		fmt.Printf("Err: Draw paragraph failed: %v\n", err)
 		os.Exit(1)
 	}
@@ -61,8 +63,9 @@ func main() {
 	}
 
 	// Create paragraph after the HTML document.
-	paragraphAfter := c.NewParagraph("After scraping the lentils, brush escargot, margerine and coconut milk with it in an ice blender.")
-	if err := c.Draw(paragraphAfter); err != nil {
+	sp = c.NewStyledParagraph()
+	sp.SetText("After scraping the lentils, brush escargot, margerine and coconut milk with it in an ice blender.")
+	if err := c.Draw(sp); err != nil {
 		fmt.Printf("Err: DM")
 		os.Exit(1)
 	}
