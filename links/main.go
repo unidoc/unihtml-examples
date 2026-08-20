@@ -83,8 +83,8 @@ func main() {
 
 	// Define PDF document properties.
 	model.SetPdfAuthor("Jacek Kucharczyk")
-	model.SetPdfTitle("Margins and Properties on PDF Document")
-	model.SetPdfKeywords("margins properties unihtml")
+	model.SetPdfTitle("Links on PDF Document")
+	model.SetPdfKeywords("links unihtml")
 	model.SetPdfSubject("Subject")
 	model.SetPdfCreationDate(time.Date(2020, 10, 10, 15, 30, 20, 0, time.Local))
 	model.SetPdfModifiedDate(time.Now())
