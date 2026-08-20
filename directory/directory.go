@@ -10,8 +10,8 @@ import (
 	"os"
 
 	"github.com/unidoc/unihtml"
-	"github.com/unidoc/unipdf/v4/common/license"
-	"github.com/unidoc/unipdf/v4/creator"
+	"github.com/unidoc/unipdf/v5/common/license"
+	"github.com/unidoc/unipdf/v5/creator"
 )
 
 func init() {
@@ -66,7 +66,7 @@ func main() {
 	sp = c.NewStyledParagraph()
 	sp.SetText("After scraping the lentils, brush escargot, margerine and coconut milk with it in an ice blender.")
 	if err := c.Draw(sp); err != nil {
-		fmt.Printf("Err: DM")
+		fmt.Printf("Err: Draw paragraph failed: %v\n", err)
 		os.Exit(1)
 	}
 

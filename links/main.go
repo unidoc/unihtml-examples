@@ -13,9 +13,9 @@ import (
 
 	"github.com/unidoc/unihtml"
 	"github.com/unidoc/unihtml/sizes"
-	"github.com/unidoc/unipdf/v4/common/license"
-	"github.com/unidoc/unipdf/v4/creator"
-	"github.com/unidoc/unipdf/v4/model"
+	"github.com/unidoc/unipdf/v5/common/license"
+	"github.com/unidoc/unipdf/v5/creator"
+	"github.com/unidoc/unipdf/v5/model"
 )
 
 func init() {
@@ -83,8 +83,8 @@ func main() {
 
 	// Define PDF document properties.
 	model.SetPdfAuthor("Jacek Kucharczyk")
-	model.SetPdfTitle("Margins and Properties on PDF Document")
-	model.SetPdfKeywords("margins properties unihtml")
+	model.SetPdfTitle("Links on PDF Document")
+	model.SetPdfKeywords("links unihtml")
 	model.SetPdfSubject("Subject")
 	model.SetPdfCreationDate(time.Date(2020, 10, 10, 15, 30, 20, 0, time.Local))
 	model.SetPdfModifiedDate(time.Now())

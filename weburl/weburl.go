@@ -13,8 +13,8 @@ import (
 
 	"github.com/unidoc/unihtml"
 	"github.com/unidoc/unihtml/sizes"
-	"github.com/unidoc/unipdf/v4/common/license"
-	"github.com/unidoc/unipdf/v4/creator"
+	"github.com/unidoc/unipdf/v5/common/license"
+	"github.com/unidoc/unipdf/v5/creator"
 )
 
 func init() {
@@ -64,6 +64,11 @@ func main() {
 
 	// Convert and get all pdf pages.
 	pages, err := webDocument.GetPdfPages(ctx)
+	if err != nil {
+		fmt.Printf("Err: Getting pages failed: %v\n", err)
+		os.Exit(1)
+	}
+
 	for _, p := range pages {
 		if err := c.AddPage(p); err != nil {
 			fmt.Printf("Err: adding page failed: %v\n", err)
