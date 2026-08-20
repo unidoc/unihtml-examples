@@ -10,8 +10,8 @@ import (
 	"os"
 
 	"github.com/unidoc/unihtml"
-	"github.com/unidoc/unipdf/v4/common/license"
-	"github.com/unidoc/unipdf/v4/creator"
+	"github.com/unidoc/unipdf/v5/common/license"
+	"github.com/unidoc/unipdf/v5/creator"
 )
 
 func init() {
@@ -54,7 +54,8 @@ func main() {
 	}
 
 	// Some Paragraph used for checking where would be the place after HTML Document.
-	p := c.NewParagraph("Some paragraph text used for checking the position of the paragraph")
+	p := c.NewStyledParagraph()
+	p.SetText("Some paragraph text used for checking the position of the paragraph")
 
 	// Draw the Paragraph in the creator context.
 	if err = c.Draw(p); err != nil {
